@@ -1,0 +1,9 @@
+header {
+    background-color: green;
+    color: aliceblue;
+}
+
+.cat {
+    display: grid;
+
+}
