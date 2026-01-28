@@ -1,9 +1,40 @@
-header {
-    background-color: green;
-    color: aliceblue;
+body {
+    font-family: "Tahoma";
+    display: grid;
+    gap: 5px;
+    background-color: rgb(169, 169, 212);
+    grid-template-areas:
+        "title"
+        "summary"
+        "articles"
+        "footer"
+        "complementary";
 }
 
-.cat {
+footer {
+    grid-area: footer;
     display: grid;
+    gap: 5px;
+    background-color: rgb(169, 169, 212);
+    grid-template-areas: "link link link link link";
+}
 
+[role=banner] {
+    text-align: center;
+    background-image: linear-gradient(to left, rgb(247, 55, 55), rgb(143, 224, 110), rgb(247, 55, 55));
+    color: aliceblue;
+    font-size: medium;
+    grid-area: title;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+[role=article] {
+    grid-area: article;
+}
+
+.wrapper {
+    grid-area: ccomplementary;
+    display: grid;
+    grid-template-areas: "row row row";
+    background-color: aqua;
 }
