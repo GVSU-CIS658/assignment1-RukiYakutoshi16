@@ -1,40 +1,90 @@
-body {
-    font-family: "Tahoma";
+.page-wrapper {
     display: grid;
+    padding: 10px;
     gap: 5px;
-    background-color: rgb(169, 169, 212);
+    width: 100%;
+    background-color: rgb(194, 212, 127);
     grid-template-areas:
-        "title"
-        "summary"
-        "articles"
-        "footer"
-        "complementary";
+        "intro intro"
+        "supporting complementary";
+
+    grid-template-columns: 4fr 1fr;
+
+
 }
 
 footer {
-    grid-area: footer;
-    display: grid;
+    display: flex;
     gap: 5px;
     background-color: rgb(169, 169, 212);
-    grid-template-areas: "link link link link link";
+    border-style: dotted;
+    justify-content: space-evenly;
+
 }
 
-[role=banner] {
+.summary {
+    text-align: center;
+    color: rgb(0, 0, 211);
+    font-size: larger;
+    line-height: .5em;
+}
+
+
+section {
+
+    grid-area: intro;
+
+}
+
+header {
+    font-family: 'Courier New';
     text-align: center;
     background-image: linear-gradient(to left, rgb(247, 55, 55), rgb(143, 224, 110), rgb(247, 55, 55));
-    color: aliceblue;
-    font-size: medium;
-    grid-area: title;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(81, 157, 223);
+    font-size: 20px;
 }
 
-[role=article] {
-    grid-area: article;
+
+
+div[role^=main] {
+    grid-area: supporting;
 }
 
-.wrapper {
-    grid-area: ccomplementary;
-    display: grid;
-    grid-template-areas: "row row row";
-    background-color: aqua;
+div[role=article]>h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(81, 157, 223);
+}
+
+
+aside {
+    grid-area: complementary;
+    border-left: 1px solid;
+    margin: 5px;
+
+}
+
+aside div>h3 {
+    margin-left: 40px;
+}
+
+li {
+    list-style-type: none
+}
+
+[href] {
+    text-decoration: none;
+    ;
+}
+
+@media (max-width:600px) {
+    p {
+        font-size: 80%;
+    }
+
+    body {
+        background-color: red;
+    }
+
+
+
 }
